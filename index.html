@@ -9,7 +9,7 @@
 <body>
     <script>
         function computerPlay() {
-            let i = Math.round(Math.random()*2);
+            let i = Math.round(Math.random()*2); // Random int from 0 - 2
             return (
                 (i == 0)? "rock":
                 (i == 1)? "paper":
@@ -21,9 +21,9 @@
         function isValidSelection(selection) {
             selection = selection.toLowerCase();
             return (
-                selection == "rock"
-                || selection == "paper"
-                || selection == "scissor"
+                selection == "rock" ||
+                selection == "paper" ||
+                selection == "scissor"
             );
         }
 
@@ -34,7 +34,8 @@
             if ((playerSelection == "rock" && computerSelection == "scissor") ||
                 (playerSelection == "paper" && computerSelection == "rock") ||
                 (playerSelection == "scissor" && computerSelection == "paper"))
-                return `You Win! ${playerSelection} beats ${computerSelection}`
+                return `You Win! ${playerSelection} beats ${computerSelection}`;
+
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         }
 
