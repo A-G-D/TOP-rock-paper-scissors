@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            let i = Math.round(Math.random()*2);
+            return (
+                (i == 0)? "rock":
+                (i == 1)? "paper":
+                (i == 2)? "scissor":
+                    ""
+            );
+        }
+
+        function isValidSelection(selection) {
+            selection = selection.toLowerCase();
+            return (
+                selection == "rock"
+                || selection == "paper"
+                || selection == "scissor"
+            );
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if (playerSelection == computerSelection)
+                return `Draw! ${playerSelection} equals ${computerSelection}`;
+
+            if ((playerSelection == "rock" && computerSelection == "scissor") ||
+                (playerSelection == "paper" && computerSelection == "rock") ||
+                (playerSelection == "scissor" && computerSelection == "paper"))
+                return `You Win! ${playerSelection} beats ${computerSelection}`
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        }
+
+        function game() {
+            for (let i = 0; i < 5; ++i) {
+                playerSelection = prompt("Pick your hand..").toLowerCase();
+                computerSelection = computerPlay();
+                result = playRound(playerSelection, computerSelection);
+                console.log(result);
+            }
+            console.log("That's it! Thanks for playing.");
+        }
+    </script>
+</body>
+</html>
