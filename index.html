@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
     <title>Rock, Paper, Scissor!</title>
 </head>
 <body>
@@ -12,14 +14,18 @@
             <label id="label-title">Rock Paper Scissor</label>
         </div>
         <div class="scores row">
+            <label id="current-score"></label>
             <div class="player">
-                <label class="playerName"></label>
-                <label class="playerScore"></label>
+                <label class="name"></label>
+                <label class="score"></label>
             </div>
             <div class="computer">
-                <label class="computerName"></label>
-                <label class="computerScore"></label>
+                <label class="name"></label>
+                <label class="score"></label>
             </div>
+        </div>
+        <div class="main row">
+            <p class="gameMessage"></p>
         </div>
         <div class="choices row">
             <button id="btn-rock">Rock</button>
