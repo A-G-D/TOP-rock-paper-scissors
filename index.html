@@ -7,47 +7,25 @@
     <title>Rock, Paper, Scissor!</title>
 </head>
 <body>
-    <script>
-        function computerPlay() {
-            let i = Math.round(Math.random()*2); // Random int from 0 - 2
-            return (
-                (i == 0)? "rock":
-                (i == 1)? "paper":
-                (i == 2)? "scissor":
-                    ""
-            );
-        }
-
-        function isValidSelection(selection) {
-            selection = selection.toLowerCase();
-            return (
-                selection == "rock" ||
-                selection == "paper" ||
-                selection == "scissor"
-            );
-        }
-
-        function playRound(playerSelection, computerSelection) {
-            if (playerSelection == computerSelection)
-                return `Draw! ${playerSelection} equals ${computerSelection}`;
-
-            if ((playerSelection == "rock" && computerSelection == "scissor") ||
-                (playerSelection == "paper" && computerSelection == "rock") ||
-                (playerSelection == "scissor" && computerSelection == "paper"))
-                return `You Win! ${playerSelection} beats ${computerSelection}`;
-
-            return `You Lose! ${computerSelection} beats ${playerSelection}`;
-        }
-
-        function game() {
-            for (let i = 0; i < 5; ++i) {
-                playerSelection = prompt("Pick your hand..").toLowerCase();
-                computerSelection = computerPlay();
-                result = playRound(playerSelection, computerSelection);
-                console.log(result);
-            }
-            console.log("That's it! Thanks for playing.");
-        }
-    </script>
+    <div class="canvas">
+        <div class="header row">
+            <label id="label-title">Rock Paper Scissor</label>
+        </div>
+        <div class="scores row">
+            <div class="player">
+                <label class="playerName"></label>
+                <label class="playerScore"></label>
+            </div>
+            <div class="computer">
+                <label class="computerName"></label>
+                <label class="computerScore"></label>
+            </div>
+        </div>
+        <div class="choices row">
+            <button id="btn-rock">Rock</button>
+            <button id="btn-paper">Paper</button>
+            <button id="btn-scissor">Scissor</button>
+        </div>
+    </div>
 </body>
 </html>
