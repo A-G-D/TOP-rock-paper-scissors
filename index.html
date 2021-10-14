@@ -9,25 +9,36 @@
     <title>Rock, Paper, Scissor!</title>
 </head>
 <body>
-    <div class="canvas">
-        <div class="header row">
-            <label id="label-title">Rock Paper Scissor</label>
+    <div class="canvas vflex">
+        <div class="header row hflex">
+            <label id="game-title">
+                Let's Play
+                <p>ROCK PAPER SCISSOR</p>
+            </label>
         </div>
-        <div class="scores row">
-            <label id="current-score"></label>
-            <div class="player">
-                <label class="name"></label>
-                <label class="score"></label>
+        <div class="players row vflex">
+            <label id="current-round">ROUND <span></span></label>
+            <div class="info hflex">
+                <div class="player vflex">
+                    <label class="col-title">PLAYER</label>
+                    <label class="name">Name: <span></span></label>
+                    <label class="score">Score: <span></span></label>
+                </div>
+                <div class="computer vflex">
+                    <label class="col-title">OPPONENT</label>
+                    <label class="name">Name: <span></span></label>
+                    <label class="score">Score: <span></span></label>
+                </div>
             </div>
-            <div class="computer">
-                <label class="name"></label>
-                <label class="score"></label>
-            </div>
         </div>
-        <div class="main row">
-            <p class="gameMessage"></p>
+        <div id="rounds-history" class="row vflex">
+            <label>Rounds History:</label>
+            <ul></ul>
         </div>
-        <div class="choices row">
+        <div id="game-message" class="row hflex">
+            <p class=""></p>
+        </div>
+        <div class="choices row hflex">
             <button id="btn-rock">Rock</button>
             <button id="btn-paper">Paper</button>
             <button id="btn-scissor">Scissor</button>
